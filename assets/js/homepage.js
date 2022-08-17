@@ -24,13 +24,14 @@ var repoSearchTerm = document.querySelector("#repo-search-term");
             // Notice this '.catch()' getting chained onto the end of the '.then()' method
             alert("Unable to connect to GitHub");
         });
-    };
+    
 
-    fetch("https://api.github.com/users/octocat/repos").then(function(response) {
-        response.json().then(function(data) {
-            console.log(data);
+        fetch("https://api.github.com/users/octocat/repos").then(function(response) {
+            response.json().then(function(data) {
+                console.log(data);
+            });
         });
-    });
+    };
 
     var formSubmitHandler = function(event) {
         event.preventDefault();

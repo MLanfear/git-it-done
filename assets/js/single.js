@@ -13,12 +13,9 @@ var getRepoIssues = function(repo) {
                 // pass response data to dom func
                 displayIssues(data);
 
-                // check if api has paginated issues
-                if (response.headers.get("Link")) {
-                    displayWarning(repo);
-                }
             });
-        } else {
+        }
+        else {
             document.location.replace("./index.html");
         }
     });
@@ -52,6 +49,7 @@ var displayIssues = function(issues) {
         issueEl.classList = "list-item flex-row justify-space-between align-center";
         issueEl.setAttribute("href", issues[i].html_url);
         issueEl.setAttribute("target", "_blank");
+    }
     
         // create span to hold issue title
         var titleEl = document.createElement("span");
@@ -74,7 +72,7 @@ var displayIssues = function(issues) {
         }
 
         issueContainerEl.appendChild(issueEl);
-    }
+    
 
 
 };
