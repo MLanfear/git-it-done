@@ -30,7 +30,8 @@ var getRepoName = function() {
         getRepoIssues(repoName);
     
 
-    } else {
+    } 
+    else {
         document.location.replace("./index.html");
     }
 };
